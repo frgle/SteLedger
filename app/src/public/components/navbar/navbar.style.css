@@ -7,11 +7,14 @@ nav {
     padding: 15px 20px;
     display: flex;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega sombra sutil */
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
+    overflow-x: hidden; /* <- evita que se pase del viewport */
+    box-sizing: border-box;
   }
   
   /* Logo */
@@ -19,27 +22,37 @@ nav {
     font-weight: bold;
     font-size: 22px;
     color: #fff;
-    text-transform: uppercase; /* Texto en mayúsculas */
+    text-transform: uppercase;
+    white-space: nowrap; /* evita que el logo se corte o salte línea */
   }
   
   /* Contenedor de enlaces de navegación */
   .nav-links {
     display: flex;
-    gap: 20px;  /* Aumenté el espacio entre enlaces */
+    gap: 20px;
+    flex: 1; /* <- permite que se adapte al espacio disponible */
+    justify-content: center; /* <- opcional: centra los enlaces si querés */
+    min-width: 0; /* <- previene que cause overflow */
   }
   
   /* Estilo de los enlaces */
-  .nav-links a {
+  .nav-link {
     color: white;
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
-    transition: color 0.3s ease, transform 0.2s ease; /* Añadí una transición para el hover */
+    transition: color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap; /* <- evita que los enlaces se salten de línea */
   }
   
   /* Hover de los enlaces */
-  .nav-links a:hover {
-    color: #007bff; /* Color de hover azul */
-    transform: translateY(-2px); /* Efecto de elevación */
+  .nav-link:hover {
+    color: #007bff;
+    transform: translateY(-2px);
+  }
+  
+  /* Estilo especial para el botón de login */
+  .right {
+    margin-left: 20px;
   }
   

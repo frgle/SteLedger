@@ -26,7 +26,7 @@ export async function authParser(req, res, next) {
       return next();
     }
 
-    req.user = {profile};
+    req.user = {profile: {...profile, plan: "basic"}};
     next();
   } catch (err) {
     console.log(err);

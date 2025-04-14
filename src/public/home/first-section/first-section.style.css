@@ -1,0 +1,25 @@
+#first-section {
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    background: linear-gradient(to right, #ecf0f1, #ffffff);
+  }
+  
+  .hero {
+    max-width: 600px;
+  }
+  
+  .hero .title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #2c3e50;
+    line-height: 1;
+    margin: 0;
+  }
+  
+  .hero p {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    color: #555;
+  }
+  

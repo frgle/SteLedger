@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(authParser);
 
 app.get('/', (req, res) => {
-    res.send("congratulations");
+    res.sendFile(__dirname + '/pages/home.page.html');
 });
 
 // app.get('/me', requireLogin, (req, res) => {

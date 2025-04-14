@@ -27,9 +27,9 @@ app.get('/', (req, res) => {
     res.send("congratulations");
 });
 
-app.get('/me', requireLogin, (req, res) => {
-    res.json(req.user.profile);
-});
+// app.get('/me', requireLogin, (req, res) => {
+//     res.json(req.user.profile);
+// });
 
 app.get('/test', (req, res) => {
     res.sendFile(__dirname + '/pages/test.html');

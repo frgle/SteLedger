@@ -63,7 +63,7 @@ class MainBar extends HTMLElement {
 
   async loadProfile() {
     try {
-      const res = await fetch(API, { credentials: 'include' });
+      const res = await fetch(`${API}/profile`, { credentials: 'include' });
       if (!res.ok) throw new Error('No autenticado');
       const profile = await res.json();
 

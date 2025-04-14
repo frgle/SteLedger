@@ -71,7 +71,7 @@ class MainBar extends HTMLElement {
       window.profile = profile;
 
       // Actualizar UI interna
-      this.setProfile(profile);
+      this.updateView(profile);
 
       // Disparar evento para otros componentes
       document.dispatchEvent(new CustomEvent('profile-loaded', { detail: profile }));

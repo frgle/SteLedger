@@ -1,0 +1,56 @@
+/* main.style.css */
+
+/* Estilo general de la página */
+body {
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;  /* Aumenté el máximo tamaño para pantallas más grandes */
+  margin: 80px auto 20px;  /* Añadí margen superior para que no se sobreponga al navbar */
+}
+
+/* Títulos */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem; /* Aumenté el tamaño de la fuente */
+  color: #333;
+}
+
+/* Estilo para los botones */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Añadí animación */
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Efecto de elevación en hover */
+}
+
+/* Estilo base para los bloques de código */
+pre {
+  background-color: #e9ecef;
+  padding: 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  overflow-x: auto;
+  max-height: 300px;
+  word-wrap: break-word; /* Evita desbordamientos en el texto */
+}

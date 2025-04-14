@@ -1,10 +1,13 @@
 // src/controllers/user.controller.js
 import { AuthService } from '../services/auth.service.js';
 
+import dotenv from 'dotenv';
+dotenv.config({ path: './src/.env' });
+
 export class AuthController {
   constructor() {
     this.authService = new AuthService();
-    this.secretKey = "eldiablo";
+    this.secretKey = process.env.JWT_SECRET;
   }
 
   home(req, res) {
@@ -12,9 +15,16 @@ export class AuthController {
   }
 
   async register(req, res) {
-    const { username, password } = req.body;
+    const { username, password, profile } = req.body;
+
+    if (!username || !password || !profile || !profile.displayName) {
+      const response = {status: 400, message: "Credentials missing.", content: null};
+      res.send(response);
+      return;
+    }
     
-    const createUserResult =  await this.authService.createUser({ username, password });
+    const createUserResult =  await this.authService.createUser({ username, password, profile });
+    const userId = createUserResult.content.id;
 
     if (createUserResult.error) {
       const response = createUserResult;
@@ -36,8 +46,10 @@ export class AuthController {
       return;
     }
 
+    const userId = await this.authService.getId(username);
+
     const secret = this.secretKey;
-    const payload = {username};
+    const payload = {userId};
     const generateToken = this.authService.generateToken({payload, secret});
 
     if (generateToken.error) {
@@ -59,6 +71,20 @@ export class AuthController {
       content: token,
     };
 
+    res.send(response);
+  }
+
+  logout(req, res) {
+    res.clearCookie('token', {
+      httpOnly: true,
+    });
+  
+    const response = {
+      status: 200,
+      message: "You have been logged out.",
+      content: null,
+    };
+  
     res.send(response);
   }
   

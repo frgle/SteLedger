@@ -1,12 +1,36 @@
 import User from '../database/models/user.model.js';
+import Profile from '../database/models/profile.model.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
 export class AuthService {
-    async createUser({username, password}) {
+    async getId(username) {
+        console.log(`USERNAME: ${username}`);
+
+        const user = await User.findOne({ where: {username} });
+        console.log(`USER BY USERNAME: ${user}`);
+
+        const userId = user.id;
+        console.log(`USER ID: ${userId}`);
+
+        return userId;
+    };
+
+    async createUser({username, password, profile }) {
         try {
             const hashedPassword = await bcrypt.hash(password, 10);
             const newUser = await User.create({ username, password: hashedPassword });
+
+            const userId = newUser.id;
+
+            const { displayName, avatarUrl, theme, language } = profile;
+            await Profile.create({
+                userId,
+                displayName,
+                avatarUrl,
+                theme,
+                language,
+            });
             return {status: 200, message: "User succesfully created.", content: newUser, error: false};
         } catch (error) {
             if (error.errors) {

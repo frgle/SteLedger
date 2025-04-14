@@ -3,20 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Test</title>
+  <link rel="stylesheet" href="/main.style.css">
   <link rel="stylesheet" href="/test/test.css">
+  <script type="module" src="/components/navbar/navbar.component.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1> Test</h1>
+  <header>
+    <main-bar></main-bar>
+  </header>
 
-    <div class="buttons">
-      <button onclick="register()">Registrar</button>
-      <button onclick="login()">Login</button>
-      <button onclick="getTokenInfo()">Ver Token</button>
+  <main>
+    <div class="container">
+      <h1> Test</h1>
+  
+      <div class="buttons">
+        <button onclick="register()">Register</button>
+        <button onclick="login()">Login</button>
+        <button onclick="logout()">Logout</button>
+        <button onclick="getTokenInfo()">Check token</button>
+      </div>
+  
+      <pre id="output">There will appear the response 👇</pre>
     </div>
-
-    <pre id="output">Aquí aparecerá la respuesta 👇</pre>
-  </div>
+  </main>
 
   <script src="/test/test.js"></script>
 </body>

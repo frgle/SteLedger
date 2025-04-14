@@ -1,0 +1,45 @@
+/* navbar.style.css */
+
+/* Estilo base del navbar */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega sombra sutil */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Logo */
+  .logo {
+    font-weight: bold;
+    font-size: 22px;
+    color: #fff;
+    text-transform: uppercase; /* Texto en mayúsculas */
+  }
+  
+  /* Contenedor de enlaces de navegación */
+  .nav-links {
+    display: flex;
+    gap: 20px;  /* Aumenté el espacio entre enlaces */
+  }
+  
+  /* Estilo de los enlaces */
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease; /* Añadí una transición para el hover */
+  }
+  
+  /* Hover de los enlaces */
+  .nav-links a:hover {
+    color: #007bff; /* Color de hover azul */
+    transform: translateY(-2px); /* Efecto de elevación */
+  }
+  

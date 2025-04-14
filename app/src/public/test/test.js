@@ -2,7 +2,10 @@ const API = 'http://localhost:3000/api/auth';
 
 const credentials = {
   username: 'maria',
-  password: 'pedrito'
+  password: 'pedrito',
+  profile: {
+    displayName: 'frgle melito',
+  },
 };
 
 const output = document.getElementById('output');
@@ -29,6 +32,16 @@ async function login() {
 
   const data = await res.json();
   output.textContent = '📦 Login:\n' + JSON.stringify(data, null, 2);
+}
+
+async function logout() {
+  const res = await fetch(`${API}/logout`, {
+    method: 'POST',
+    credentials: 'include'
+  });
+
+  const data = await res.json();
+  output.textContent = '📦 Logout:\n' + JSON.stringify(data, null, 2);
 }
 
 async function getTokenInfo() {

@@ -4,6 +4,7 @@ class MainBar extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.render();
     this.loadProfile();
+    this.API = 'https://steledger.onrender.com/api/auth';
   }
 
   render() {
@@ -22,7 +23,7 @@ class MainBar extends HTMLElement {
 
   async loadProfile() {
     try {
-      const res = await fetch('http://localhost:3000/me', { credentials: 'include' });
+      const res = await fetch(this.API, { credentials: 'include' });
       if (!res.ok) throw new Error('No autenticado');
       const profile = await res.json();
 

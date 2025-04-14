@@ -1,25 +1,33 @@
+/* --- Hero Section --- */
 #first-section {
     display: flex;
+    justify-content: flex-start; /* Aligns content to the left */
     align-items: center;
+    height: 100vh; /* Ensures the section takes full height */
     padding: 0 10%;
     background: linear-gradient(to right, #ecf0f1, #ffffff);
   }
   
-  .hero {
+  .hero-container {
     max-width: 600px;
+    text-align: left; /* Align the text to the left */
+    color: #2c3e50; /* Dark color for text */
   }
   
-  .hero .title {
+  .hero-container .title {
     font-size: 4rem;
     font-weight: 800;
     color: #2c3e50;
-    line-height: 1;
+    line-height: 1.1;
     margin: 0;
   }
   
-  .hero p {
+  .hero-container .title:nth-of-type(2) {
+    margin-top: -10px; /* Small negative margin to bring the two titles closer */
+  }
+  
+  .hero-container p {
     font-size: 1.3rem;
     margin-top: 1.5rem;
     color: #555;
   }
-  

@@ -1,70 +1,64 @@
+/* --- About Us Section --- */
 .about-us-preview {
-    display: flex;
-    align-items: center;
-    background-color: #f9f9f9;
-    padding: 0 10%;
-  }
-  
-  .about-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 4rem;
-    width: 100%;
-    max-width: 1400px;
-    margin: auto;
-  }
-  
-  .about-text {
-    flex: 1;
-  }
-  
-  .about-text h3 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #2c3e50;
-  }
-  
-  .about-text p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 1rem;
-    max-width: 600px;
-  }
-  
-  .about-link {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #007BFF;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  .about-link:hover {
-    text-decoration: underline;
-  }
-  
-  .about-image {
-    flex: 1;
-    text-align: right;
-  }
-  
-  .about-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  }
-  
-  .about-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  }
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, var(--color-main), var(--color-secondary)); /* Usando el color terciario para el fondo */
+  padding: 0 10%;
+}
 
-  .force-500x400-size {
-    width: 500px;
-    height: 400px;
-    object-fit: cover;
-  }
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-light); /* Usamos el color claro para el título */
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: var(--color-tertiary); /* Usamos el color principal para el párrafo */
+  margin-bottom: 1rem;
+  max-width: 600px;
+}
+
+.about-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--color-tertiary); /* Usamos el color secundario para el enlace */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.about-link:hover {
+  text-decoration: underline;
+}
+
+.about-image {
+  flex: 1;
+  text-align: right;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.force-500x400-size {
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
+}

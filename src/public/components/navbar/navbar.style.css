@@ -1,58 +1,105 @@
-/* navbar.style.css */
-
 /* Estilo base del navbar */
 nav {
-    background-color: #333;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    overflow-x: hidden; /* <- evita que se pase del viewport */
-    box-sizing: border-box;
+  background-color: var(--color-main); /* Fondo oscuro usando la variable */
+  color: var(--color-light); /* Texto claro */
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  overflow-x: hidden; /* Evita que se pase del viewport */
+  box-sizing: border-box;
+  height: 80px;
+}
+
+/* Logo */
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+  color: var(--color-light); /* Usamos el color claro para el logo */
+  text-transform: uppercase;
+  white-space: nowrap; /* Evita que el logo se corte o salte de línea */
+}
+
+/* Contenedor de enlaces de navegación */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex: 1; /* Permite que se adapte al espacio disponible */
+  justify-content: center; /* Opcional: centra los enlaces si lo deseas */
+  min-width: 0; /* Previene el overflow */
+}
+
+/* Estilo de los enlaces */
+.nav-link {
+  color: var(--color-light); /* Texto claro para los enlaces */
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; /* Evita que los enlaces se salten de línea */
+}
+
+/* Hover de los enlaces */
+.nav-link:hover {
+  color: var(--color-secondary); /* Cambia el color al secundario cuando se pasa el ratón */
+  transform: translateY(-2px); /* Efecto de elevación sutil */
+}
+
+/* Estilo especial para el botón de login */
+.right {
+  margin-left: 20px;
+  background-color: var(--color-secondary); /* Fondo secundario para el botón */
+  color: var(--color-light); /* Texto claro en el botón */
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover del botón de login */
+.right:hover {
+  background-color: var(--color-tertiary); /* Cambia a un color terciario en hover */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 10px 15px; /* Reduce padding en móviles */
+    height: 60px; /* Ajusta la altura para que no se vea tan grande */
   }
-  
-  /* Logo */
+
+  /* Asegurar que el navbar ocupe todo el ancho disponible */
   .logo {
-    font-weight: bold;
-    font-size: 22px;
-    color: #fff;
-    text-transform: uppercase;
-    white-space: nowrap; /* evita que el logo se corte o salte línea */
+    font-size: 18px; /* Ajustar el tamaño del logo */
+    flex-grow: 1;  /* Asegura que el logo ocupe el espacio disponible */
   }
-  
+
   /* Contenedor de enlaces de navegación */
   .nav-links {
     display: flex;
-    gap: 20px;
-    flex: 1; /* <- permite que se adapte al espacio disponible */
-    justify-content: center; /* <- opcional: centra los enlaces si querés */
-    min-width: 0; /* <- previene que cause overflow */
+    gap: 15px;  /* Reduce el espacio entre los enlaces */
+    flex: 1;
+    justify-content: center;
+    min-width: 0;  /* Previene el desbordamiento */
   }
-  
+
   /* Estilo de los enlaces */
   .nav-link {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.2s ease;
-    white-space: nowrap; /* <- evita que los enlaces se salten de línea */
+    font-size: 16px; /* Ajusta el tamaño de la fuente */
+    white-space: nowrap; /* Evita que los enlaces se dividan */
   }
-  
-  /* Hover de los enlaces */
-  .nav-link:hover {
-    color: #007bff;
-    transform: translateY(-2px);
-  }
-  
-  /* Estilo especial para el botón de login */
+
+  /* Ajustar el botón de login */
   .right {
-    margin-left: 20px;
+    margin-left: 15px; /* Reduce el espacio a la izquierda del botón */
+    font-size: 14px; /* Reducir el tamaño del texto en el botón */
+    padding: 6px 12px; /* Ajustar padding */
   }
-  
+}

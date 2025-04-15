@@ -1,0 +1,20 @@
+:root {
+    /* Paleta de colores */
+    --color-main: #352F44;       /* Fondo oscuro */
+    --color-secondary: #5C5470;  /* Secundario */
+    --color-tertiary: #B9B4C7;   /* Terciario */
+    --color-light: #FAF0E6;      /* Texto claro */
+    
+    /* Colores para estados de los botones */
+    --color-button-hover: #B9B4C7;
+  
+    /* Tipografía */
+    --font-primary: 'Poppins', sans-serif;
+  
+    /* Font Weights (principales) */
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+  }
+  

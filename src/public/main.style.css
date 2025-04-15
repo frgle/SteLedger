@@ -1,59 +1,123 @@
-/* main.style.css */
+/* ------------------------------------------------------
+   INICIALIZACIÓN Y RESET
+--------------------------------------------------------*/
 
-/* Estilo general de la página */
-body {
-  background-color: #f0f2f5;
-  font-family: Arial, sans-serif;
+/* Restablecer márgenes y paddings de todos los elementos */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-section {
-  height: 100vh;
+/* Establecer una fuente base utilizando variables */
+body {
+  font-family: var(--font-primary); /* Usamos la fuente Poppins desde la variable */
+  font-weight: var(--fw-regular); /* Peso Regular como base */
+  line-height: 1.6; /* Espaciado entre líneas */
+  font-size: 16px; /* Tamaño de fuente base */
+  color: var(--color-light); /* Color de texto base */
+  background-color: var(--color-main); /* Fondo oscuro */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Contenedor principal */
-.container {
-  background: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 800px;  /* Aumenté el máximo tamaño para pantallas más grandes */
-  margin: 80px auto 20px;  /* Añadí margen superior para que no se sobreponga al navbar */
+/* ------------------------------------------------------
+   ELEMENTOS GENERALES
+--------------------------------------------------------*/
+
+/* Estilos para el body */
+body {
+  background-color: var(--color-main);
+  color: var(--color-light);
 }
 
-/* Títulos */
-h1 {
-  margin-bottom: 20px;
-  font-size: 2rem; /* Aumenté el tamaño de la fuente */
-  color: #333;
+/* Estilo base para los encabezados */
+h1, h2, h3 {
+  color: var(--color-light);
+  font-family: var(--font-primary);
+  font-weight: var(--fw-bold); /* Títulos con Bold */
 }
 
-/* Estilo para los botones */
+/* Subtítulos (h2) */
+h2 {
+  font-weight: var(--fw-semibold); /* Subtítulos con SemiBold */
+}
+
+/* Enlaces */
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: var(--fw-medium); /* Enlaces con Medium */
+}
+
+a:hover {
+  color: var(--color-light);
+}
+
+/* ------------------------------------------------------
+   BOTONES
+--------------------------------------------------------*/
+
 button {
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+  padding: 10px 20px;
   border: none;
-  padding: 12px 24px;
-  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Añadí animación */
+  font-family: var(--font-primary); /* Fuente personalizada */
+  font-weight: var(--fw-semibold); /* Peso SemiBold para botones */
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px); /* Efecto de elevación en hover */
+  background-color: var(--color-button-hover);
 }
 
-/* Estilo base para los bloques de código */
-pre {
-  background-color: #e9ecef;
-  padding: 15px;
-  border-radius: 4px;
+/* ------------------------------------------------------
+   PIE DE PÁGINA
+--------------------------------------------------------*/
+
+footer {
+  background-color: var(--color-tertiary);
+  color: var(--color-main);
+  padding: 20px;
+  text-align: center;
   font-size: 14px;
-  overflow-x: auto;
-  max-height: 300px;
-  word-wrap: break-word; /* Evita desbordamientos en el texto */
+  font-family: var(--font-primary);
+  font-weight: var(--fw-light); /* Pie de página con font-light */
+}
+
+/* ------------------------------------------------------
+   ELEMENTOS GENERALES DE TIPO CONTAINER
+--------------------------------------------------------*/
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-primary);
+  font-weight: var(--fw-regular); /* Cuerpo con font-weight regular */
+}
+
+/* ------------------------------------------------------
+   MEDIA QUERIES (Responsividad)
+--------------------------------------------------------*/
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Ajustar tamaño de texto para pantallas más pequeñas */
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  button {
+    padding: 8px 15px;
+  }
 }

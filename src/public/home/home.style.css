@@ -1,18 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* General body styles */
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-  }
-
 section {
-    height: 100vh;
+    height: calc(100vh - 80px);
+}
+
+main {
+    height: calc(100vh - 80px);
+    overflow-y: scroll;
 }

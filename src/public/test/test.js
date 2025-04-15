@@ -1,4 +1,5 @@
-const API = 'https://steledger.onrender.com/api/auth';
+// test.js
+import { API } from '../index.script.js';
 
 const credentials = {
   username: 'maria',
@@ -10,44 +11,49 @@ const credentials = {
 
 const output = document.getElementById('output');
 
-async function register() {
+document.getElementById('registerButton').addEventListener('click', registerHandler);
+document.getElementById('loginButton').addEventListener('click', loginHandler);
+document.getElementById('logoutButton').addEventListener('click', logoutHandler);
+document.getElementById('tokenInfoButton').addEventListener('click', getTokenInfoHandler);
+
+async function registerHandler() {
   const res = await fetch(`${API}/register`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(credentials),
-    credentials: 'include'
+    credentials: 'include',
   });
 
   const data = await res.json();
   output.textContent = '📦 Register:\n' + JSON.stringify(data, null, 2);
 }
 
-async function login() {
+async function loginHandler() {
   const res = await fetch(`${API}/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(credentials),
-    credentials: 'include'
+    credentials: 'include',
   });
 
   const data = await res.json();
   output.textContent = '📦 Login:\n' + JSON.stringify(data, null, 2);
 }
 
-async function logout() {
+async function logoutHandler() {
   const res = await fetch(`${API}/logout`, {
     method: 'POST',
-    credentials: 'include'
+    credentials: 'include',
   });
 
   const data = await res.json();
   output.textContent = '📦 Logout:\n' + JSON.stringify(data, null, 2);
 }
 
-async function getTokenInfo() {
+async function getTokenInfoHandler() {
   const res = await fetch(`${API}/token-info`, {
     method: 'GET',
-    credentials: 'include'
+    credentials: 'include',
   });
 
   const data = await res.json();

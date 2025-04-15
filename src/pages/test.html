@@ -16,17 +16,17 @@
     <div class="container">
       <h1> Test</h1>
   
-      <div class="buttons">
-        <button onclick="register()">Register</button>
-        <button onclick="login()">Login</button>
-        <button onclick="logout()">Logout</button>
-        <button onclick="getTokenInfo()">Check token</button>
+      <div class="buttons container">
+        <button id="registerButton">Register</button>
+        <button id="loginButton">Login</button>
+        <button id="logoutButton">Logout</button>
+        <button id="tokenInfoButton">Check token</button>
       </div>
   
-      <pre id="output">There will appear the response 👇</pre>
+      <pre id="output" class="container">There will appear the response 👇</pre>
     </div>
   </main>
 
-  <script src="/test/test.js"></script>
+  <script type="module" src="/test/test.js"></script>
 </body>
 </html>

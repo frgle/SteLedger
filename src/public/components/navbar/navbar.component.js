@@ -1,4 +1,4 @@
-const API = 'https://steledger.onrender.com/api/auth';
+import { API } from '/index.script.js';
 
 const presets = {
   notLogged: `

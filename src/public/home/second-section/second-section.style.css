@@ -1,4 +1,4 @@
-#about-us-preview {
+.about-us-preview {
     display: flex;
     align-items: center;
     background-color: #f9f9f9;
@@ -56,3 +56,15 @@
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   }
   
+  .about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .force-500x400-size {
+    width: 500px;
+    height: 400px;
+    object-fit: cover;
+  }

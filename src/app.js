@@ -27,16 +27,12 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/pages/home.page.html');
 });
 
-// app.get('/me', requireLogin, (req, res) => {
-//     res.json(req.user.profile);
-// });
+app.get('/register', (req, res) => {
+    res.sendFile(__dirname + '/pages/register.page.html');
+});
 
 app.get('/test', (req, res) => {
     res.sendFile(__dirname + '/pages/test.html');
-});
-
-app.get('/home', requireLogin, (req, res) => {
-    res.send("bienvenido al home");
 });
 
 app.use('/api', ApiRoute);

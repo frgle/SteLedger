@@ -1,52 +1,58 @@
 import { API } from '/index.script.js';
 
+function buildNavbar(centerLinks = [], rightLinks = [{ href: '/login', text: 'Log In' }]) {
+  const linkTag = `<link rel="stylesheet" href="/components/navbar/navbar.style.css">`;
+  const logo = `<div class="logo">STE-LEDGER</div>`;
+
+  const center = centerLinks
+    .map(link => `<a href="${link.href}" class="nav-link">${link.text}</a>`)
+    .join('');
+
+  const right = rightLinks
+    .map(link => `<a href="${link.href}" class="right nav-link">${link.text}</a>`)
+    .join('');
+
+  return `
+    ${linkTag}
+    <nav>
+      ${logo}
+      <div class="nav-links">${center}</div>
+      <div class="nav-right">${right}</div>
+    </nav>
+  `;
+}
+
 const presets = {
-  notLogged: `
-      <link rel="stylesheet" href="/components/navbar/navbar.style.css">
-      <nav>
-        <div class="logo">STE-LEDGER</div>
-        
-        <div class="nav-links">
-          <a href="/about-us" class="nav-link">About Us</a>
-          <a href="/about-us/services" class="nav-link">Services</a>
-          <a href="/about-us/safety" class="nav-link">Safety</a>
-          <a href="/about-us/contact" class="nav-link">Contact</a>
-        </div>
-
-        <a href="/login" class="right nav-link">Log In</a>
-      </nav>
-    `,
-    noPlan: `
-      <link rel="stylesheet" href="/components/navbar/navbar.style.css">
-      <nav>
-        <div class="logo">STE-LEDGER</div>
-        
-        <div class="nav-links">
-          <a href="/home" class="nav-link">Home</a>
-          <a href="/profile/plan" class="nav-link">Plan</a>
-          <a href="/store" class="nav-link">Store</a>
-        </div>
-
-        <a href="/profile" class="right nav-link">Profile</a>
-      </nav>
-    `,
-    basicPlan: `
-      <link rel="stylesheet" href="/components/navbar/navbar.style.css">
-      <nav>
-        <div class="logo">STE-LEDGER</div>
-        
-        <div class="nav-links">
-          <a href="/home" class="nav-link">Home</a>
-          <a href="/profile/plan" class="nav-link">Plan</a>
-          <a href="/inventory" class="nav-link">Inventory</a>
-          <a href="/selling" class="nav-link">Selling Point</a>
-          <a href="/store" class="nav-link">Store</a>
-        </div>
-
-        <a href="/profile" class="right nav-link">Profile</a>
-      </nav>
-    `,
-
+  notLogged: buildNavbar(
+    [
+      { href: "/about-us", text: "About Us" },
+      { href: "/about-us/services", text: "Services" },
+      { href: "/about-us/safety", text: "Safety" },
+      { href: "/about-us/contact", text: "Contact" }
+    ],
+    [
+      { href: "/register", text: "Register" },
+      { href: "/login", text: "Log In" }
+    ]
+  ),
+  noPlan: buildNavbar(
+    [
+      { href: "/home", text: "Home" },
+      { href: "/profile/plan", text: "Plan" },
+      { href: "/store", text: "Store" }
+    ],
+    [{ href: "/profile", text: "Profile" }]
+  ),
+  basicPlan: buildNavbar(
+    [
+      { href: "/home", text: "Home" },
+      { href: "/profile/plan", text: "Plan" },
+      { href: "/inventory", text: "Inventory" },
+      { href: "/selling", text: "Selling Point" },
+      { href: "/store", text: "Store" }
+    ],
+    [{ href: "/profile", text: "Profile" }]
+  )
 };
 
 class MainBar extends HTMLElement {
@@ -90,6 +96,7 @@ class MainBar extends HTMLElement {
     switch (plan) {
       case "basic":
         component.innerHTML = presets.basicPlan;
+        break;
       default:
         component.innerHTML = presets.noPlan;
     }

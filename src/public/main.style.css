@@ -58,6 +58,10 @@ a:hover {
   color: var(--color-light);
 }
 
+section {
+  height: calc(100vh - 80px);
+}
+
 /* ------------------------------------------------------
    BOTONES
 --------------------------------------------------------*/
@@ -71,6 +75,7 @@ button {
   font-family: var(--font-primary); /* Fuente personalizada */
   font-weight: var(--fw-semibold); /* Peso SemiBold para botones */
   transition: background-color 0.3s ease;
+  border-radius: 15px;
 }
 
 button:hover {
@@ -102,22 +107,25 @@ footer {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   font-family: var(--font-primary);
   font-weight: var(--fw-regular); /* Cuerpo con font-weight regular */
+  border-radius: 15px;
+  background-color: var(--color-main);
 }
 
 /* ------------------------------------------------------
-   MEDIA QUERIES (Responsividad)
+   BACKGROUNDS
 --------------------------------------------------------*/
 
-@media (max-width: 768px) {
-  body {
-    font-size: 14px; /* Ajustar tamaño de texto para pantallas más pequeñas */
-  }
+.bg-readonly {
+  background-color: #f4f4f4;
+}
 
-  .container {
-    padding: 10px;
-  }
+.bg-config {
+  color: var(--color-main);
+  background-image: var(--floating-cogs), linear-gradient(to left, var(--color-main), var(--color-secondary));
+  background-repeat: repeat;
+  background-position: center;
+}
 
-  button {
-    padding: 8px 15px;
-  }
+.bg-interactive {
+  background-color: #fff3cd;
 }

@@ -1,0 +1,29 @@
+form {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columna */
+    gap: 10px; /* Espacio entre los elementos */
+}
+
+input, label {
+    width: 100%; /* Asegura que los elementos ocupen todo el ancho disponible */
+}
+
+input, label, button {
+    font-size: 18px;
+}
+
+button {
+    color: var(--color-light);
+    border-radius: 5px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 15px;
+    color: var(--color-main);
+    background-color: var(--color-light);
+}
+
+label {
+    color: var(--color-tertiary)
+}
